@@ -7,18 +7,18 @@
 * As subclasses podem substituir esse método para alterar a classe de objetos que serão criados.
 */
 
-interface Product {
+interface IProduct {
   getProductName(): void;
 }
 
-class ConcreteProduct implements Product {
+class ConcreteProduct implements IProduct {
   getProductName(): void {
     console.log('Macbook Pro M1')
   }
 }
 
-abstract class Creator {
-  abstract factoryMethod(): Product;
+abstract class ICreator {
+  abstract factoryMethod(): IProduct;
 
   createAndShow(): void {
     const product = this.factoryMethod();
@@ -26,8 +26,8 @@ abstract class Creator {
   }
 }
 
-class ConcreteCreator extends Creator {
-  factoryMethod(): Product {
+class ConcreteCreator extends ICreator {
+  factoryMethod(): IProduct {
     return new ConcreteProduct()
   }
 }
