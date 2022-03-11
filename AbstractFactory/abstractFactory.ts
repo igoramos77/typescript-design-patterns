@@ -1,3 +1,7 @@
+/*
+* O Abstract Factory é um padrão de projeto criacional que permite que você produza famílias de objetos relacionados sem ter que especificar suas classes concretas.
+* Exemplo em questão: A fábrica cria carros do mesmo para pessoas do tipo pessoa física ou pessoa jurídica, ambas implementam mútoas interfaces para construir veiculos 
+*/
 interface ICustomer {
   name: string;
 }
