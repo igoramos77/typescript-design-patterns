@@ -8,12 +8,12 @@
 */
 
 interface Product {
-  saiHi(): void;
+  getProductName(): void;
 }
 
 class ConcreteProduct implements Product {
-  saiHi(): void {
-    console.log('Hi!')
+  getProductName(): void {
+    console.log('Macbook Pro M1')
   }
 }
 
@@ -34,5 +34,5 @@ class ConcreteCreator extends Creator {
 
 const creator = new ConcreteCreator();
 const product = creator.factoryMethod();
-product.saiHi();
+product.getProductName();
 creator.createAndShow();
