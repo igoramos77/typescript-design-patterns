@@ -6,27 +6,28 @@
 
 // Component
 export abstract class ValidationComponent {
-  abstract validate(value: unknown): boolean;
+  abstract validate(value: string): boolean;
 }
 
 // Base
 export class ValidateIsEmail extends ValidationComponent {
-  validate(value: unknown): boolean {
-    // Clausula de guarda
-    if (typeof value !== 'string') return false;
-
+  validate(value: string): boolean {
     const rgxEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return rgxEmail.test(value);
   }
 }
 
 export class ValidateIsGmail extends ValidationComponent {
-  validate(value: unknown): boolean {
-    // Clausula de guarda
-    if (typeof value !== 'string') return false;
-
+  validate(value: string): boolean {
     const rgxContainGmail = /gmail/;
     return rgxContainGmail.test(value);
+  }
+}
+
+export class ValidateIsNationalDomain extends ValidationComponent {
+  validate(value: string): boolean {
+    const rgxBr = /\.br/;
+    return rgxBr.test(value);
   }
 }
 
@@ -34,7 +35,7 @@ export class ValidateIsGmail extends ValidationComponent {
 export class ValidationComposite extends ValidationComponent {
   private readonly children: ValidationComponent[] = [];
 
-  validate(value: unknown): boolean {
+  validate(value: string): boolean {
     for (const child of this.children) {
       const validation = child.validate(value);
       if (!validation) return false;
@@ -49,9 +50,10 @@ export class ValidationComposite extends ValidationComponent {
 
 const validateEmail = new ValidateIsEmail();
 const validateIsGmail = new ValidateIsGmail();
+const validateIsNationalDomain = new ValidateIsNationalDomain();
 
 const validationComposite = new ValidationComposite();
 
-validationComposite.add(validateEmail, validateIsGmail);
+validationComposite.add(validateEmail, validateIsGmail, validateIsNationalDomain);
 
-console.log(validationComposite.validate('igorbrownramos@gmail.com'));
+console.log(validationComposite.validate('igorbrownramos@gmail.com.br'));
