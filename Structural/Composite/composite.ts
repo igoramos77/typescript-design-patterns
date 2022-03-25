@@ -4,48 +4,54 @@
 *   se elas fossem objetos individuais.
 */
 
-export abstract class ProductComponent {
-  abstract getPrice(): number;
-
-  addProduct(product: ProductComponent): void {}
-  removeProduct(product: ProductComponent): void {}
+// Component
+export abstract class ValidationComponent {
+  abstract validate(value: unknown): boolean;
 }
 
-export class ProductBase extends ProductComponent {
-  constructor(public name: string, public price: number) {
-    super(); // preciso chamar o super(), já que a classe extendida é abstract
-  }
+// Base
+export class ValidateIsEmail extends ValidationComponent {
+  validate(value: unknown): boolean {
+    // Clausula de guarda
+    if (typeof value !== 'string') return false;
 
-  getPrice(): number {
-    return this.price;
+    const rgxEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return rgxEmail.test(value);
   }
 }
 
-export class ProductComposite extends ProductComponent {
-  private children: ProductComponent[] = [];
-  
-  addProduct(product: ProductComponent): void {
-    const productIndex = this.children.indexOf(product);
-    if (productIndex !== -1) {
-      this.children.splice(productIndex, 1);
+export class ValidateIsGmail extends ValidationComponent {
+  validate(value: unknown): boolean {
+    // Clausula de guarda
+    if (typeof value !== 'string') return false;
+
+    const rgxContainGmail = /gmail/;
+    return rgxContainGmail.test(value);
+  }
+}
+
+// Composite
+export class ValidationComposite extends ValidationComponent {
+  private readonly children: ValidationComponent[] = [];
+
+  validate(value: unknown): boolean {
+    for (const child of this.children) {
+      const validation = child.validate(value);
+      if (!validation) return false;
     }
+    return true;
   }
 
-  getPrice(): number {
-    // Soma todos os preços dos produtos
-    return this.children.reduce((sum, children) => sum + children.getPrice(), 0);
+  add(...validations: ValidationComponent[]): void {
+    validations.forEach((validation) => this.children.push(validation));
   }
 }
 
-// Client
+const validateEmail = new ValidateIsEmail();
+const validateIsGmail = new ValidateIsGmail();
 
-const tshirt = new ProductBase('Camisa estampada azul', 120);
-const shoes = new ProductBase('Tenis nike SB', 260);
-const smartphone = new ProductBase('iPhone 13', 9620);
+const validationComposite = new ValidationComposite();
 
-const productsBag = new ProductComposite();
-productsBag.addProduct(tshirt); 
-productsBag.addProduct(shoes); 
-productsBag.addProduct(smartphone); 
+validationComposite.add(validateEmail, validateIsGmail);
 
-console.log(productsBag);
+console.log(validationComposite.validate('igorbrownramos@gmail.com'));
