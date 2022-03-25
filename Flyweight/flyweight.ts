@@ -1,4 +1,4 @@
-// Parte intrinsica (NÃO MUDA)
+// Parte Intrínseca (NÃO MUDA)
 export type TDeliveryLocationData = {
   readonly street: string;
   readonly city: string;
