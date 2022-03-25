@@ -119,9 +119,9 @@ export class Radio implements IDevice {
 }
 
 export class AirConditioning implements IDevice {
-  private temperature = 24;
-  private power = false;
   private volume = 10;
+  private power = false;
+  private temperature = 24;
   private name = 'Air Conditioning';
 
   setPower(powerStatus: boolean): void {
@@ -193,9 +193,7 @@ function client(abstraction: RemoteControl | RemoteControlWithVolume | RemoteCon
 
       return;
     }
-
   }
-
 
 const tv =  new Tv();
 const radio = new Radio();
