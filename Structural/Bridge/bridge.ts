@@ -140,7 +140,7 @@ export class AirConditioning implements IDevice {
     return this.volume;
   }
 
-  setVolume(volume: number): number {
+  setVolume(volume: number): any {
     this.volume = volume;
   }
 
