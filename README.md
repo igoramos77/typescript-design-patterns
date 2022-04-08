@@ -2,14 +2,14 @@
 *Arquitetura E Projeto De Software*
 
 
-**Creational**
+**Creational** <br />
 [AbstractFactory](https://github.com/igoramos77/typescript-design-patterns/blob/main/Creational/AbstractFactory/abstractFactory.ts) <br />
 [Builder](https://github.com/igoramos77/typescript-design-patterns/blob/main/Creational/Builder/builder.ts) <br />
 [FactoryMethod](https://github.com/igoramos77/typescript-design-patterns/blob/main/Creational/FactoryMethod/factoryMethod.ts) <br />
 [Prototype](https://github.com/igoramos77/typescript-design-patterns/blob/main/Creational/Prototype/prototype.ts) <br />
 [Singleton](https://github.com/igoramos77/typescript-design-patterns/blob/main/Creational/Singleton/singleton.ts) <br />
 
-**Structural**
+**Structural** <br />
 [Adapter](https://github.com/igoramos77/typescript-design-patterns/blob/main/Structural/Adapter/adpter.ts) <br />
 [Bridge](https://github.com/igoramos77/typescript-design-patterns/blob/main/Structural/Bridge/bridge.ts) <br />
 [Composite](https://github.com/igoramos77/typescript-design-patterns/blob/main/Structural/Composite/composite.ts) <br />
