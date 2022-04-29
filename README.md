@@ -17,3 +17,6 @@
 [Facade](https://github.com/igoramos77/typescript-design-patterns/blob/main/Structural/Facade/facade.ts) <br />
 [Flyweight](https://github.com/igoramos77/typescript-design-patterns/blob/main/Structural/Flyweight/flyweight.ts) <br />
 [Proxy](https://github.com/igoramos77/typescript-design-patterns/blob/main/Structural/Proxy/proxy.ts) <br />
+
+**Behavioral** <br />
+[TemplateMethod](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/TemplateMethod/templateMethod.ts) <br />
