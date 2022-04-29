@@ -20,3 +20,4 @@
 
 **Behavioral** <br />
 [TemplateMethod](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/TemplateMethod/templateMethod.ts) <br />
+[State](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/State/state.ts) <br />
