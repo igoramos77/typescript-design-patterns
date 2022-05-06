@@ -20,6 +20,6 @@
 
 **Behavioral** <br />
 [Iterator](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Iterator/iterator.ts) <br />
-[Oberserver](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Oberserver/oberserver.ts) <br />
+[Oberserver](https://github.com/igoramos77/typescript-design-patterns/tree/main/Behavioral/Observer) <br />
 [State](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/State/state.ts) <br />
 [TemplateMethod](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/TemplateMethod/templateMethod.ts) <br />
