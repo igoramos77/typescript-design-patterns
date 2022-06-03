@@ -20,6 +20,7 @@
 
 **Behavioral** <br />
 [Chain Of Responsibility](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/ChainOfResponsibility/chain-of-responsability.ts) <br />
+[Command](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Command/command.ts) <br />
 [Iterator](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Iterator/iterator.ts) <br />
 [Oberserver](https://github.com/igoramos77/typescript-design-patterns/tree/main/Behavioral/Observer) <br />
 [State](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/State/state.ts) <br />
