@@ -26,4 +26,5 @@
 [Memento](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Memento/memento.ts) <br />
 [Oberserver](https://github.com/igoramos77/typescript-design-patterns/tree/main/Behavioral/Observer) <br />
 [State](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/State/state.ts) <br />
+[Strategy](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Strategy/strategy.ts) <br />
 [TemplateMethod](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/TemplateMethod/templateMethod.ts) <br />
