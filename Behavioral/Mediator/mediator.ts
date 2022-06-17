@@ -1,3 +1,8 @@
+/*
+    O Mediator é um padrão de projeto comportamental que permite que você reduza as dependências
+    caóticas entre objetos. O padrão restringe comunicações diretas entre objetos e os força a 
+    colaborar apenas através do objeto mediador.
+*/
 export type IProductProps = {
   id: string;
   name: string;
@@ -76,4 +81,4 @@ seller2.addProduct({ id: '4', name: 'Notebok DELL v2', price: 4.500 });
 
 mediator.addSellers(seler1, seller2);
 
-mediator.showProducts();
+mediator.showProducts(); 
