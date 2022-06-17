@@ -21,6 +21,7 @@
 **Behavioral** <br />
 [Chain Of Responsibility](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/ChainOfResponsibility/chain-of-responsability.ts) <br />
 [Command](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Command/command.ts) <br />
+[Interpreter](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Interpreter/interpreter.ts) <br />
 [Iterator](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Iterator/iterator.ts) <br />
 [Mediator](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Mediator/mediator.ts) <br />
 [Memento](https://github.com/igoramos77/typescript-design-patterns/blob/main/Behavioral/Memento/memento.ts) <br />
