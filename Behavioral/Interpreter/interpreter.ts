@@ -22,24 +22,23 @@ export class Add implements IAbstractExpression {
   right: IAbstractExpression;
 
   constructor(left: IAbstractExpression, right: IAbstractExpression) {
-    this.left = left
-    this.right = right
+    this.left = left;
+    this.right = right;
   }
 
   interpret() {
     return this.left.interpret() + this.right.interpret()
   }
-  
+
 }
 
 export class Subtract implements IAbstractExpression {
-
   left: IAbstractExpression;
   right: IAbstractExpression;
 
   constructor(left: IAbstractExpression, right: IAbstractExpression) {
-    this.left = left
-    this.right = right
+    this.left = left;
+    this.right = right;
   }
 
   interpret() {
@@ -47,21 +46,38 @@ export class Subtract implements IAbstractExpression {
   }
 }
 
-const operators = ['+', '-', '*', '/'];
-
 // Client
-const SENTENCE = '5 - 4 - 3 + 7 - 2';
+const SENTENCE = '5 + 4';
 console.log(SENTENCE);
 
 const arraySentence = SENTENCE.split(" ");
-console.log(arraySentence)
+console.log(arraySentence);
 
-const n1 = new Numeral(arraySentence[0])
-console.log(n1)
+let size = arraySentence.length - 1;
+let value = 0;
 
-const n2 = new Numeral(arraySentence[2])
-console.log(n2)
+while (size != 0) {
 
-const subtract1 = new Subtract(n1, n2)
-console.log(n1.interpret() - n2.interpret())
-console.log(subtract1.interpret())
+  if (arraySentence.length % 2 != 0) {
+    let n1 = new Numeral(arraySentence[0]);
+    let operator = arraySentence[1];
+    let n2 = new Numeral(arraySentence[2]);
+
+    if (operator === '-') {
+      const subtract = new Subtract(n1, n2).interpret();
+      console.log(subtract);
+      value = subtract;
+    }
+    else if (operator === '+') {
+      const add = new Add(n1, n2).interpret();
+      console.log(add);
+      value = add;
+    }
+
+    size -= 1;
+  }
+
+  console.log('final value:', value);
+}
+
+
